@@ -17,9 +17,6 @@ A lightweight tool to automate manual synchronization of Obsidian.md vaults betw
 - `config.py`: Configuration parameters.
 - `main.py`: The main script for working with the archive and Telegram afterwards.
 
-## License
-[MIT License](https://mit-license.org)
-
 ---
 
 Легкий инструмент для автоматизации ручной синхронизации Obsidian.md хранилища между устройствами. Скрипт создает zip-архив вашего хранилища, присваивает ему название с текущей датой и позволяет легко переносить его на другие устройства или платформы. Легко настраивается с помощью FTP или TG ботов.
@@ -40,5 +37,5 @@ A lightweight tool to automate manual synchronization of Obsidian.md vaults betw
 - `config.py`: Конфигурационные параметры.
 - `main.py`: Основной скрипт для работы с архивом и Telegram-ботом.
 
-## Лицензия
+## License
 [MIT License](https://mit-license.org)
