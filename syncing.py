@@ -3,7 +3,6 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from datetime import datetime
 from aiogram import Bot
 from aiogram.types import FSInputFile
-from config import TOKEN
 
 # 1 ЭТАП: РАБОТА С АРХИВАЦИЕЙ
 #----------------------------------------------------
@@ -32,6 +31,8 @@ def archive_folder(source_dir, archive_name):
 FOLDER_PATH = os.path.dirname(os.path.abspath(__file__)) # Путь до архива (папка проекта)
 ARCHIVE_PATH = os.path.join(FOLDER_PATH, ARCHIVE_NAME)
 CHAT_ID = 111111111 # ID чата для отправки архива (@userinfobot в TG)
+
+TOKEN = '' # Token from @BotFather
 
 async def send_backup():
     bot = Bot(token=TOKEN)
