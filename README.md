@@ -7,15 +7,15 @@ A lightweight tool to automate manual synchronization of Obsidian.md vaults betw
    pip install aiogram
    ```
 2. Download [Token for your Telegram bot](https://core.telegram.org/bots#botfather).
-3. Specify the settings in `config.py `.
+3. Specify the settings in `config.py ` (TOKEN = '').
 4. Run the script:
    ```bash
-   python main.py
+   py syncing.py
    ```
 
 ## Project structure
 - `config.py`: Configuration parameters.
-- `main.py`: The main script for working with the archive and Telegram afterwards.
+- `syncing.py`: The main script for working with the archive and Telegram afterwards.
 
 ---
 
@@ -27,15 +27,15 @@ A lightweight tool to automate manual synchronization of Obsidian.md vaults betw
    pip install aiogram
    ```
 2. Скачайте [Токен для вашего Telegram-бота](https://core.telegram.org/bots#botfather).
-3. Укажите настройки в `config.py `.
+3. Укажите настройки в `config.py ` (TOKEN = '').
 4. Запустите скрипт:
    ```bash
-    python main.py
+    py syncing.py
    ```
 
 ## Структура проекта
 - `config.py`: Конфигурационные параметры.
-- `main.py`: Основной скрипт для работы с архивом и Telegram-ботом.
+- `syncing.py`: Основной скрипт для работы с архивом и Telegram-ботом.
 
 ## License
 [MIT License](https://mit-license.org)
