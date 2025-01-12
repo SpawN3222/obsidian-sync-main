@@ -3,6 +3,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from datetime import datetime
 from aiogram import Bot
 from aiogram.types import FSInputFile
+#from config import TOKEN !!! config.py in .gitignore
 
 # 1 ЭТАП: РАБОТА С АРХИВАЦИЕЙ
 #----------------------------------------------------
@@ -32,7 +33,7 @@ FOLDER_PATH = os.path.dirname(os.path.abspath(__file__)) # Путь до арх�
 ARCHIVE_PATH = os.path.join(FOLDER_PATH, ARCHIVE_NAME)
 CHAT_ID = 111111111 # ID чата для отправки архива (@userinfobot в TG)
 
-TOKEN = '' # Token from @BotFather
+TOKEN = '' # Token from @BotFather !!! Better send to config.py
 
 async def send_backup():
     bot = Bot(token=TOKEN)
