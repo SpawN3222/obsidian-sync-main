@@ -7,7 +7,6 @@ from config import TOKEN
 
 # ? 1 ЭТАП: РАБОТА С АРХИВАЦИЕЙ
 # ?----------------------------------------------------
-
 # ? Указываем пути
 SOURCE_DIR = "__dirname__"  # ! Папка с хранилищем (включительно)
 DATE = datetime.now().strftime("%d-%m-%Y")  # ? Текущая дата в формате день-месяц-год
@@ -27,11 +26,11 @@ def archive_folder(source_dir, archive_name):
 
 # ? 2 ЭТАП: РАБОТА С ТГ-БОТОМ
 # ? ----------------------------------------------------
-
 # ? Пути для бота
 FOLDER_PATH = os.path.dirname(os.path.abspath(__file__)) # ? Путь до архива (папка проекта)
 ARCHIVE_PATH = os.path.join(FOLDER_PATH, ARCHIVE_NAME)
 CHAT_ID = 111111111 # ! ID чата для отправки архива (@userinfobot в TG)
+
 
 async def send_backup():
     bot = Bot(token=TOKEN)
