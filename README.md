@@ -17,25 +17,8 @@ A lightweight tool to automate manual synchronization of Obsidian.md vaults betw
 - `config.py`: Configuration parameters.
 - `syncing.py`: The main script for working with the archive and Telegram afterwards.
 
----
-
-Легкий инструмент для автоматизации ручной синхронизации Obsidian.md хранилища между устройствами. Скрипт создает zip-архив вашего хранилища, присваивает ему название с текущей датой и позволяет легко переносить его на другие устройства или платформы. Легко настраивается с помощью FTP или TG ботов.
-
-## Установка и запуск
-1. Установите настройки:
-   ```bash
-   pip install aiogram
-   ```
-2. Скачайте [Токен для вашего Telegram-бота](https://core.telegram.org/bots#botfather).
-3. Укажите настройки в `config.py ` (TOKEN = '').
-4. Запустите скрипт:
-   ```bash
-    py syncing.py
-   ```
-
-## Структура проекта
-- `config.py`: Конфигурационные параметры.
-- `syncing.py`: Основной скрипт для работы с архивом и Telegram-ботом.
-
 ## License
 [MIT License](https://mit-license.org)
+
+---
+
