@@ -19,6 +19,3 @@ A lightweight tool to automate manual synchronization of Obsidian.md vaults betw
 
 ## License
 [MIT License](https://mit-license.org)
-
----
-
