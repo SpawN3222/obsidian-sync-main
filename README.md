@@ -4,7 +4,7 @@ A lightweight tool to automate manual synchronization of Obsidian.md vaults betw
 ## Installation and launch
 1. Set the settings:
    ```bash
-   pip install aiogram
+   pip install tqdm aiogram
    ```
 2. Download [Token for your Telegram bot](https://core.telegram.org/bots#botfather).
 3. Specify the settings in `config.py ` (TOKEN = '').
