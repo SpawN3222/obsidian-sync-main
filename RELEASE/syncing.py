@@ -1,6 +1,7 @@
 import os
 from zipfile import ZipFile, ZIP_DEFLATED
 from datetime import datetime
+from tqdm import tqdm # ? Для прогресс бара
 from aiogram import Bot
 from aiogram.types import FSInputFile
 from config import TOKEN
@@ -14,15 +15,22 @@ ARCHIVE_NAME = f"vault_backup_{DATE}.zip"   # ? Имя архива с дато�
 
 # ? Архивация папки
 def archive_folder(source_dir, archive_name):
-    with ZipFile(archive_name, 'w', ZIP_DEFLATED) as zipf:
-        for root, dirs, files in os.walk(source_dir):
-            for file in files:
-                # ? Сохраняем полную структуру, включая саму папку
-                file_path = os.path.join(root, file)
+    print(f"Архивация папки {source_dir}...")
+    try:
+        with ZipFile(archive_name, 'w', ZIP_DEFLATED) as zipf:
+            files = [
+                os.path.join(root, file)
+                for root, _, files in os.walk(source_dir)
+                for file in files
+            ]
+            for file_path in tqdm(files, desc="Архивация файлов"):
                 arcname = os.path.relpath(file_path, os.path.dirname(source_dir))
                 zipf.write(file_path, arcname)
-    print(f"Папка '{source_dir}' заархивирована в '{archive_name}'. Переход к запуску бота...")
-
+        print(f"Папка '{source_dir}' заархивирована в '{archive_name}'.")
+        return True
+    except Exception as e:
+        print(f"Произошла ошибка при архивации: {e}")
+        return False
 
 # ? 2 ЭТАП: РАБОТА С ТГ-БОТОМ
 # ? ----------------------------------------------------
@@ -48,10 +56,10 @@ async def send_backup():
     else:
         print(f"Архив не найден: [{FOLDER_PATH}].")
 
-# ? Архивация папки
-archive_folder(SOURCE_DIR, ARCHIVE_NAME)
-
-# ? Функция запуска бота
-if __name__ == "__main__":
-    import asyncio
-    asyncio.run(send_backup())
+# ? Функция архивации и запуска бота
+if archive_folder(SOURCE_DIR, ARCHIVE_NAME):
+    if __name__ == "__main__":
+        import asyncio
+        asyncio.run(send_backup())
+else:
+    print("Архивация не удалась. Отправка архива отменена.")
