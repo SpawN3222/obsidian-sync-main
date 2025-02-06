@@ -22,7 +22,7 @@ print(ASCII_INTRO)
 
 
 def archive_folder(source_dir, archive_name):
-    print(f"Архивация папки {source_dir}...")
+    print(f"Архивация папки [{source_dir}]...")
     try:
         with ZipFile(archive_name, 'w', ZIP_DEFLATED) as zipf:
             files = [
