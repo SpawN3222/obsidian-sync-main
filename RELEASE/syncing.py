@@ -2,7 +2,6 @@ import os
 import logging
 import asyncio
 
-from time import sleep
 from zipfile import ZipFile, ZIP_DEFLATED
 from tqdm.asyncio import tqdm
 from aiogram import Bot
@@ -109,9 +108,9 @@ if archive_folder(SOURCE_DIR, ARCHIVE_NAME):
         
         asyncio.run(send_backup_with_progress()) # ? send_backup_with_progress()  ||  send_backup()
         
-        sleep(5)
+        input("\nPress Enter to exit... ")
 else:
     print(f"Архивация {RED}не удалась{RESET}. Отправка архива отменена.")
     
-    sleep(3)
+    input("\nPress Enter to exit... ")
     
